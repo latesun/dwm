@@ -69,6 +69,8 @@ static const char *browsercmd[]  = { "chromium", NULL };
 static const char *downvol[]   = { "amixer", "set", "-q", "Master", "5%-", "unmute", NULL };
 static const char *upvol[]   = { "amixer", "set", "-q", "Master", "5%+", "unmute", NULL };
 static const char *mutevol[]   = { "amixer", "set", "-q", "Master", "toggle", NULL };
+static const char *downlight[] = { "xbacklight", "-dec", "10", NULL};
+static const char *uplight[] = { "xbacklight", "-inc", "10", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -78,6 +80,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F1,     spawn,          {.v = mutevol } },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = downvol } },
 	{ MODKEY,                       XK_F3,     spawn,          {.v = upvol } },
+	{ MODKEY,                       XK_F5,     spawn,          {.v = downlight } },
+	{ MODKEY,                       XK_F6,     spawn,          {.v = uplight } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
