@@ -65,12 +65,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "chromium", "--force-device-scale-factor=1.5", NULL };
+static const char *browsercmd[]  = { "chromium", "--force-device-scale-factor=1.6", NULL };
 static const char *downvol[]   = { "amixer", "set", "-q", "Master", "5%-", "unmute", NULL };
 static const char *upvol[]   = { "amixer", "set", "-q", "Master", "5%+", "unmute", NULL };
+static const char *toggle[]   = { "amixer", "set", "-q", "Master", "toggle", NULL };
 static const char *mutevol[]   = { "amixer", "set", "-q", "Master", "toggle", NULL };
 static const char *downlight[] = { "xbacklight", "-dec", "10", NULL};
 static const char *uplight[] = { "xbacklight", "-inc", "10", NULL};
+static const char *screenshot[] = { "flameshot", "gui", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -80,8 +82,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F1,     spawn,          {.v = mutevol } },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = downvol } },
 	{ MODKEY,                       XK_F3,     spawn,          {.v = upvol } },
+	{ MODKEY,                       XK_F4,     spawn,          {.v = toggle } },
 	{ MODKEY,                       XK_F5,     spawn,          {.v = downlight } },
 	{ MODKEY,                       XK_F6,     spawn,          {.v = uplight } },
+	{ MODKEY,                       XK_Print,  spawn,          {.v = screenshot } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
