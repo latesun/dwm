@@ -26,7 +26,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -66,7 +66,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", "--force-device-scale-factor=1.6", NULL };
-static const char *postmancmd[]  = { "postman", "--force-device-scale-factor=1.6", NULL };
+static const char *postmancmd[]  = { "postman", "--force-device-scale-factor=1.7", NULL };
 static const char *downvol[]   = { "amixer", "set", "-q", "Master", "5%-", "unmute", NULL };
 static const char *upvol[]   = { "amixer", "set", "-q", "Master", "5%+", "unmute", NULL };
 static const char *toggle[]   = { "amixer", "set", "-q", "Master", "toggle", NULL };
@@ -80,7 +80,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = browsercmd } },
-	{ MODKEY,                       XK_s,      spawn,          {.v = postmancmd } },
+	{ MODKEY,                       XK_h,      spawn,          {.v = postmancmd } },
 	{ MODKEY,                       XK_F1,     spawn,          {.v = mutevol } },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = downvol } },
 	{ MODKEY,                       XK_F3,     spawn,          {.v = upvol } },
